@@ -15,7 +15,7 @@ public class Invader extends Actor {
 	private float _y = 0;
 	private float chargeDistance = MAX_CHARGE_DISDANCE;
 	private boolean onCharge = false;
-	private float speedModifier = 0.0f;
+	private float speedModifier = 0.5f;
 
 	private final Type type;
 	private MovingDirection movingDirection = MovingDirection.RIGHT;
@@ -115,5 +115,10 @@ public class Invader extends Actor {
 
 	void increaseInvaderSpeed() {
 		speedModifier += 0.025f;
+	}
+
+	boolean attackEarth() {
+
+		return _y <= 0;
 	}
 }

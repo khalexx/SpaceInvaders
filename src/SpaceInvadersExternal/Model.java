@@ -35,7 +35,8 @@ public class Model extends Actor {
 			invadersFormation.startCharge();
 		}
 
-		if (invadersFormation.attackSpaceship(spaceship)) {
+		if (invadersFormation.attackSpaceship(spaceship)
+				|| invadersFormation.attackEarth()) {
 			gameOver = true;
 		}
 

@@ -110,7 +110,7 @@ public class InvadersFormation {
 					continue;
 				}
 				if (_formation[i][j].tryHit(spaceship.getGunX(),
-						spaceship.getY())) {
+						spaceship.getY() + spaceship.texture.getHeight())) {
 					return true;
 				}
 			}
@@ -120,6 +120,21 @@ public class InvadersFormation {
 
 	public boolean destroyed() {
 		return invadersCount == 0;
+	}
+
+	boolean attackEarth() {
+		for (int i = 0; i < _formation.length; i++) {
+			for (int j = 0; j < _formation[i].length; j++) {
+				if (_formation[i][j] == null) {
+					continue;
+				}
+				if (_formation[i][j].attackEarth()) {
+					return true;
+				}
+			}
+		}
+		return false;
+
 	}
 
 }
